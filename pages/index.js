@@ -4,6 +4,13 @@ function Titulo(props){
     return (
         <>
             <h1>{props.children}</h1>
+            <style jsx>{`
+                h1{
+                    color: red;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            `}</style>
         </>
     )
 
@@ -16,11 +23,7 @@ function HomePage() {
         <div>
             <Titulo>está sendo ignorado</Titulo>
             <h2>Discord - Alura Matrix</h2>
-            <style jsx>{`
-                h1{
-                    color: red;
-                }
-            `}</style>
+
         </div>
     )
   }
