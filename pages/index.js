@@ -1,8 +1,8 @@
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import { Children } from "react/cjs/react.production.min";//fez import automatico
 
 function Titulo(props){
     return(
-        <h1>${props.children}</h1>
+        <h1>{props.children}</h1>
     );
 }
 
