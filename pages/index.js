@@ -1,6 +1,8 @@
-function Titulo(){
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+
+function Titulo(props){
     return(
-        <h1>Boas vindas de volta</h1>
+        <h1>${props.children}</h1>
     );
 }
 
