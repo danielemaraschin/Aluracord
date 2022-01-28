@@ -26,7 +26,7 @@ function GlobalStyle(){
         }
         /* ./App fit Height */ 
       `}</style>
-      //app fit height é para ajustar automatico cabeçalho
+      //app fit height é para ajustar automatico rodape
     );
   }
 function Titulo(props) {
