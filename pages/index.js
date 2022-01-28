@@ -26,6 +26,7 @@ function GlobalStyle(){
         }
         /* ./App fit Height */ 
       `}</style>
+      //app fit height é para ajustar automatico cabeçalho
     );
   }
 function Titulo(props) {
@@ -37,7 +38,7 @@ function Titulo(props) {
             <style jsx>{`
             ${Tag} 
                 {
-                    color: red;
+                    color: pink;
                     font-size: 24px;
                     font-weight: 600;
                 }
