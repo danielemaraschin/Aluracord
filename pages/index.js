@@ -8,7 +8,7 @@ function Titulo(){
 function HomePage() {
     return (
         <div>
-            <Titulo>testando 123</Titulo>
+            <Titulo>está sendo ignorado</Titulo>
             <h2>Discord - Alura Matrix</h2>
             <style jsx>{`
                 h1{
