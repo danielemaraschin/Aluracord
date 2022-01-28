@@ -1,9 +1,13 @@
 import { Children } from "react/cjs/react.production.min";//fez import automatico
 
 function Titulo(props){
-    return(
-        <h1>{props.children}</h1>
-    );
+    return (
+        <>
+            <h1>{props.children}</h1>
+        </>
+    )
+
+    ;
 }
 
 //component react
