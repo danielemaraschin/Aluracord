@@ -39,7 +39,7 @@ function Titulo(props) {
             <style jsx>{`
             ${Tag} 
                 {
-                    color: pink;
+                    color: ${appConfig.Tag};
                     font-size: 24px;
                     font-weight: 600;
                 }
