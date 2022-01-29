@@ -31,7 +31,7 @@ function GlobalStyle() {
 }
 
 function Titulo(props) {
-  const Tag = props.tag || 'h1'; //se nao passarem nenhum valor pela props.tag, então assume valor de h1
+  const Tag = props.tag || 'h1';//se nao passarem valor pela props.tag, então assume valor de h1
   return (
     <>
       <Tag>{props.children}</Tag>
