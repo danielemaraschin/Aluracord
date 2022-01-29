@@ -1,5 +1,5 @@
+import { Box, Button, Text, TextField, Image } from '@skynexui/components'
 import appConfig from '../config.json'
-
 
 function GlobalStyle(){
     return(
@@ -39,7 +39,7 @@ function Titulo(props) {
             <style jsx>{`
             ${Tag} 
                 {
-                    color: ${appConfig.Tag};
+                    color: ${appConfig.theme.colors.neutrals['050']};
                     font-size: 24px;
                     font-weight: 600;
                 }
