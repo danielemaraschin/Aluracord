@@ -1,4 +1,5 @@
-import { Children } from "react/cjs/react.production.min";//fez import automatico
+import appConfig from '../config.json'
+
 
 function GlobalStyle(){
     return(
