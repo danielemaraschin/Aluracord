@@ -55,7 +55,6 @@ export default function ChatPage() {
                         }}
                     >
                         <TextField
-
                         value={mensagem}
                         onChange={(event)=> {
                             const valor = event.target.value
