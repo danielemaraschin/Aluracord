@@ -5,7 +5,7 @@ import appConfig from '../config.json';
 export default function ChatPage() {
 
     const [mensagem, setMensagem] = React.useState("")
-    const [listaDeMensagens, setListaDeMensagens] = React.useState([])
+    const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
     return (
         <Box
@@ -64,7 +64,13 @@ export default function ChatPage() {
                         
                         onKeyPress={(event) => {
                             if(event.key === "Enter") {
-                                console.log(event)
+                                event.preventDefault(); //enter default eh pular a linha, dai nao vai pular a linha
+                                console.log(event);
+                                setListaDeMensagens ([
+                                    ...listaDeMensagens,
+                                    mensagem
+                                ]);
+                                
                                 setMensagem("")
 
                             }
