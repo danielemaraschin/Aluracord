@@ -1,6 +1,6 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import React from 'react';
-import { useState } from 'react'
+import { useRouter } from 'next/router'
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -65,6 +65,7 @@ export default function PaginaInicial() {
     //const username = 'danielemaraschin';
 
     const [username, setUsername] = React.useState('danielemaraschin');
+    const roteamento = useRouter()
 
 
     return (
@@ -99,6 +100,7 @@ export default function PaginaInicial() {
                         onSubmit={function(event) {
                             event.preventDefault();
                             console.log(" formulario enviado");
+                            roteamento.push("/chat")
                             
                         }}
                         styleSheet={{
