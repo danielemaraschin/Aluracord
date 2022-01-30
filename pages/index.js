@@ -108,7 +108,13 @@ export default function PaginaInicial() {
                             type="text"
                             value={username}
                             onChange={function (event) {
-                            console.log('usuario digitou.', event.target,value)                            )
+                            console.log('usuario digitou.', event.target,value);
+                            //onde ta o valor?
+                            const valor = event.target.value;
+                            username = valor;
+                            //trocar o valor da variavel pelo react e nao na unha
+                            // e avise quem mais precisa fazer alteracao (nas ocorrencias da var por ex)
+                            setUsername(valor);
                         }}
                         />
 
