@@ -5,6 +5,7 @@ import appConfig from '../config.json';
 export default function ChatPage() {
 
     const [mensagem, setMensagem] = React.useState("")
+    const [listaDeMensagens, setListaDeMensagens] = React.useState([])
 
     return (
         <Box
@@ -57,13 +58,16 @@ export default function ChatPage() {
 
                         value={mensagem}
                         onChange={(event)=> {
-                            console.log(event)
                             const valor = event.target.value
                             setMensagem(valor)
                         }}
                         
                         onKeyPress={(event) => {
-                            console.log(event)
+                            if(event.key === "Enter") {
+                                console.log(event)
+                                setMensagem("")
+
+                            }
                         }}
 
                             placeholder="Insira sua mensagem aqui..."
