@@ -107,8 +107,8 @@ export default function PaginaInicial() {
                         <input
                             type="text"
                             value={username}
-                            onChange={function () {
-                            console.log('usuario digitou.')
+                            onChange={function (event) {
+                            console.log('usuario digitou.', event.target,value)                            )
                         }}
                         />
 
