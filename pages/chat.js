@@ -57,8 +57,9 @@ export default function ChatPage() {
 
                         value={mensagem}
                         onChange={(event)=> {
-                            const message = event.target.value
-                            setMensagem(message)
+                            console.log(event)
+                            const valor = event.target.value
+                            setMensagem(valor)
                         }}
                         
                         onKeyPress={(event) => {
