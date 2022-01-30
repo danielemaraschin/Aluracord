@@ -64,7 +64,7 @@ function Titulo(props) {
 export default function PaginaInicial() {
     //const username = 'danielemaraschin';
     
-    const [username, setUsername] = React.useState('danimaraschin');
+    const [username, setUsername] = React.useState('danielemaraschin');
 
 
     return (
@@ -106,7 +106,7 @@ export default function PaginaInicial() {
                             {appConfig.name}
                         </Text>
 
-                        <input
+                        {/* <input
                             type="text"
                             value={username}
                             onChange={function (event) {
@@ -117,9 +117,9 @@ export default function PaginaInicial() {
                             // e avise quem mais precisa fazer alteracao (nas ocorrencias da var por ex)
                             setUsername(valor);
                         }}
-                        />
+                        />}
 
-                        {/*  INPUT ONDE COLOCA O NOME DO USUARIO ANTES DE APLICAR O REACT
+                    INPUT ONDE COLOCA O NOME DO USUARIO ANTES DE APLICAR O REACT */}
             <TextField
               fullWidth
               textFieldColors={{
@@ -130,7 +130,7 @@ export default function PaginaInicial() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }} 
-            /> */}
+            /> 
                         <Button
                             type='submit'
                             label='Login'
