@@ -1,5 +1,6 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
-import react from 'react';
+import React from 'react';
+import {useState} from 'react'
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -62,7 +63,8 @@ function Titulo(props) {
 
 export default function PaginaInicial() {
     //const username = 'danielemaraschin';
-    const [username, setUsername] = react.useState
+    
+    const [username, setUsername] = React.useState('danimaraschin');
 
 
     return (
@@ -108,10 +110,9 @@ export default function PaginaInicial() {
                             type="text"
                             value={username}
                             onChange={function (event) {
-                            console.log('usuario digitou.', event.target,value);
+                            console.log('usuario digitou.', event.target.value);
                             //onde ta o valor?
                             const valor = event.target.value;
-                            username = valor;
                             //trocar o valor da variavel pelo react e nao na unha
                             // e avise quem mais precisa fazer alteracao (nas ocorrencias da var por ex)
                             setUsername(valor);
