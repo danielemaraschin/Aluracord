@@ -1,6 +1,6 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import React from 'react';
-import {useState} from 'react'
+import { useState } from 'react'
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -63,7 +63,7 @@ function Titulo(props) {
 
 export default function PaginaInicial() {
     //const username = 'danielemaraschin';
-    
+
     const [username, setUsername] = React.useState('danielemaraschin');
 
 
@@ -120,17 +120,26 @@ export default function PaginaInicial() {
                         />}
 
                     INPUT ONDE COLOCA O NOME DO USUARIO ANTES DE APLICAR O REACT */}
-            <TextField
-              fullWidth
-              textFieldColors={{
-                neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                        <TextField
+                            value={username}
+                            onChange={function (event) {
+                                console.log('usuario digitou.', event.target.value);
+                                //onde ta o valor?
+                                const valor = event.target.value;
+                                //trocar o valor da variavel pelo react e nao na unha
+                                // e avise quem mais precisa fazer alteracao (nas ocorrencias da var por ex)
+                                setUsername(valor);
+                            }}
+                                fullWidth
+                                textFieldColors = {{
+                                    neutral: {
+                                        textColor: appConfig.theme.colors.neutrals[200],
+                                            mainColor: appConfig.theme.colors.neutrals[900],
+                        mainColorHighlight: appConfig.theme.colors.primary[500],
+                        backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }} 
-            /> 
+            />
                         <Button
                             type='submit'
                             label='Login'
