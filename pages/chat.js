@@ -16,9 +16,9 @@ export default function ChatPage() {
         supabaseClient
             .from('mensagens')
             .select('*')
-            .then((dados) => {
-                console.log('Dados da Consulta: ', dados);
-                setListaDeMensagens(dados.data) //data eh onde fica armazenada as msg quando abrimos o console 
+            .then(({data}) => {
+                console.log('Dados da Consulta: ', data);
+                setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
     }, [listaDeMensagens]);
 
