@@ -12,12 +12,15 @@ export default function ChatPage() {
     const [mensagem, setMensagem] = React.useState("")
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
-    supabaseClient
-    .from('mensagens')
-    .select('*')
-    .then((dados) => {
-        console.log('Dados da Consulta: ', dados);
-    })
+    React.useEffect(() => {
+        supabaseClient
+            .from('mensagens')
+            .select('*')
+            .then((dados) => {
+                console.log('Dados da Consulta: ', dados);
+                setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
+            });
+    }, [listaDeMensagens]);
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
@@ -29,7 +32,7 @@ export default function ChatPage() {
         setListaDeMensagens([
             mensagem,
             ...listaDeMensagens,
-            
+
         ]); //a 
         setMensagem('')
     }
