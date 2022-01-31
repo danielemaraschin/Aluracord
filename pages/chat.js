@@ -24,10 +24,14 @@ export default function ChatPage() {
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            id: listaDeMensagens.length + 1,
+            //id: listaDeMensagens.length + 1,    //posso usar o id que vem do servidor entao nao precisa mais desse
             de: 'danimaraschin',
             texto: novaMensagem,
         };
+
+        supabaseClient
+            .from('mensagens')
+            .insert([])
 
         setListaDeMensagens([
             mensagem,
