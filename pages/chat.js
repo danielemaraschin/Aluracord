@@ -8,6 +8,11 @@ export default function ChatPage() {
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
 function handleNovaMensagem(novaMensagem) {
+    const mensagem = { 
+        id: listaDeMensagens.length + 1,
+        de:'danielemaraschin',
+        texto: novaMensagem,
+    };
     setListaDeMensagens([
         ...listaDeMensagens,
         novaMensagem,
@@ -58,8 +63,8 @@ function handleNovaMensagem(novaMensagem) {
                      <MessageList/>
                      { listaDeMensagens.map((mensagemAtual)=> {
                          return (
-                             <li>
-                                 {mensagemAtual}
+                             <li key={mensagemAtual.id}>
+                                 {mensagemAtual.de} : {mensagemAtual}
                              </li>
                          )
                      })}
