@@ -18,7 +18,7 @@ export default function ChatPage() {
             .select('*')
             .then((dados) => {
                 console.log('Dados da Consulta: ', dados);
-                setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
+                setListaDeMensagens(dados.data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
     }, [listaDeMensagens]);
 
