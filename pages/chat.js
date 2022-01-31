@@ -2,6 +2,8 @@ import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MDA3NiwiZXhwIjoxOTU5MjM2MDc2fQ._WPZ6wTRt9N44MvecppoHk0EiGRJAym2gm30LR87H54'
+
 export default function ChatPage() {
 
     const [mensagem, setMensagem] = React.useState("")
