@@ -5,6 +5,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MDA3NiwiZXhwIjoxOTU5MjM2MDc2fQ._WPZ6wTRt9N44MvecppoHk0EiGRJAym2gm30LR87H54'
 const SUPABASE_URL = 'https://icscbahdmnirzqegnofj.supabase.co'
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export default function ChatPage() {
 
