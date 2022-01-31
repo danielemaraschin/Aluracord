@@ -7,6 +7,16 @@ export default function ChatPage() {
     const [mensagem, setMensagem] = React.useState("")
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
+function handleNovaMensagem(novaMensagem) {
+    setListaDeMensagens([
+        ...listaDeMensagens,
+        novaMensagem,
+    ]);
+    setMensagem('')
+}
+
+
+
     return (
         <Box
             styleSheet={{
@@ -45,7 +55,14 @@ export default function ChatPage() {
                     }}
                 >
 
-                    {/* <MessageList mensagens={[]} /> */}
+                     <MessageList/>
+                     { listaDeMensagens.map((mensagemAtual)=> {
+                         return (
+                             <li>
+                                 {mensagemAtual}
+                             </li>
+                         )
+                     })}
 
                     <Box
                         as="form"
