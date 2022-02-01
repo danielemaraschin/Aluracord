@@ -31,7 +31,7 @@ export default function ChatPage() {
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
             //id: listaDeMensagens.length + 1,    //posso usar o id que vem do servidor entao nao precisa mais desse
-            de: 'peas',
+            de: usuarioLogado,
             texto: novaMensagem,
         };
 
