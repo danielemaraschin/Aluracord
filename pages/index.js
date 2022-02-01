@@ -72,7 +72,7 @@ export default function PaginaInicial() {
                         onSubmit={function(event) {
                             event.preventDefault();
                             console.log(" formulario enviado");
-                            roteamento.push("/chat")
+                            roteamento.push(`/chat?username=${username}`)
                             
                         }}
                         styleSheet={{
