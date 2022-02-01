@@ -136,6 +136,7 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <ButtonSendSticker/>
                     </Box>
                 </Box>
             </Box>
@@ -219,7 +220,10 @@ function MessageList(props) {
                             </Text>
                         </Box>
             {/*condicional declarativa */}
-                        {mensagem.texto.startsWith(':sticker:') ? ('é sticker')
+                        {mensagem.texto.startsWith(':sticker:') ?
+                        (
+                            <Image src={mensagem.texto.replace(':sticker:', '')}/>
+                        )
                         :
                         (mensagem.texto)}
 
