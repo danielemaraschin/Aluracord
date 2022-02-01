@@ -11,6 +11,8 @@ export default function ChatPage() {
 
     const roteamento = useRouter();
     const usuarioLogado = roteamento.query.username;
+    console.log(roteamento.query);
+    console.log('usuarioLogado: ', usuarioLogado)
     const [mensagem, setMensagem] = React.useState("")
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
