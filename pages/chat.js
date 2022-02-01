@@ -16,6 +16,7 @@ export default function ChatPage() {
         supabaseClient
             .from('mensagens')
             .select('*')
+            .order('id', {ascending: false}) //lib supabase tem essa sintaxe para ordenarmos os itens do objeto
             .then(({data}) => {
                 console.log('Dados da Consulta: ', data);
                 setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
