@@ -9,7 +9,8 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export default function ChatPage() {
 
-    const roteamento = useRouter()
+    const roteamento = useRouter();
+    const usuarioLogado = roteamento.query.username;
     const [mensagem, setMensagem] = React.useState("")
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
 
