@@ -13,11 +13,11 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function escutaMensagemEmTempoReal(adicionaMensagem) { //from(nome da tb q quer buscar as info)
     return supabaseClient
-    .from('mensagens').
-    on('INSERT', ({RespostaNaLive}) => {
-        adicionaMensagem(RespostaNaLive.new);
-    }).
-    subscribe();
+        .from('mensagens').
+        on('INSERT', ({ RespostaNaLive }) => {
+            adicionaMensagem(RespostaNaLive.new);
+        }).
+        subscribe();
 }
 
 export default function ChatPage() {
@@ -33,13 +33,25 @@ export default function ChatPage() {
         supabaseClient
             .from('mensagens')
             .select('*')
-            .order('id', {ascending: false}) //lib supabase tem essa sintaxe para ordenarmos os itens do objeto
-            .then(({data}) => {
-                console.log('Dados da Consulta: ', data);
+            .order('id', { ascending: false }) //lib supabase tem essa sintaxe para ordenarmos os itens do objeto
+            .then(({ data }) => {
+                // console.log('Dados da Consulta: ', data);
                 setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
-        escutaMensagemEmTempoReal((novaMensagem) => {
-            handleNovaMensagem(novaMensagem)
+        escutaMensagemEmTempoReal((novaMensagem) => { //qnd escutar uma nova mensagem, chama a funcao do setdemensagens
+//se quero REusar um valor de referencia (objeto/array)devo passar uma funcao pro setState
+            console.log('Nova mensagem? ', novaMensagem);
+            setListaDeMensagens((valorAtualDaLista) => {
+                return [
+                    novaMensagem,
+                    ...valorAtualDaLista,
+                ]
+            });
+            //NAO FAZ COMO ABAIXO PQ SO VAI PEGAR O VALOR INICIAL DO ARRAY
+            // setListaDeMensagens([
+            //     novaMensagem,
+            //     ...listaDeMensagens, //td q tinha na lista com a nova msg
+            // ]);
         })
     }, []);//deixar array vazio pq so quero que o useEffect seja chamado ao recarregar a page
 
@@ -56,13 +68,8 @@ export default function ChatPage() {
                 //tem q ser um objeto com os MESMOS CAMPOS q vc escreveu no supabase
                 mensagem
             ])
-            .then(({data}) => {
-                console.log('Criando mensagem? ', data);
-                setListaDeMensagens([
-                    data[0],
-                    ...listaDeMensagens,
-
-                ]);
+            .then(({ data }) => {
+                console.log('Criando mensagem: ', data)
             });
         setMensagem('')
     }
@@ -152,10 +159,10 @@ export default function ChatPage() {
                         />
                         {/*callback*/}
                         <ButtonSendSticker
-                            onStickerClick={(sticker) =>{
+                            onStickerClick={(sticker) => {
                                 console.log('usando o componente - salva esse sticke no db');
                                 handleNovaMensagem(':sticker: ' + sticker);
-                            }}/>
+                            }} />
                     </Box>
                 </Box>
             </Box>
@@ -238,13 +245,13 @@ function MessageList(props) {
                                 {(new Date().toLocaleDateString())}
                             </Text>
                         </Box>
-            {/*condicional declarativa */}
+                        {/*condicional declarativa */}
                         {mensagem.texto.startsWith(':sticker:') ?
-                        (
-                            <Image src={mensagem.texto.replace(':sticker:', '')}/>
-                        )
-                        :
-                        (mensagem.texto)}
+                            (
+                                <Image src={mensagem.texto.replace(':sticker:', '')} />
+                            )
+                            :
+                            (mensagem.texto)}
 
                     </Text>
 
