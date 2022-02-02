@@ -136,7 +136,11 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
-                        <ButtonSendSticker/>
+                        {/*callback*/}
+                        <ButtonSendSticker
+                            onStickerClick={(sticker) =>{
+                                console.log('usando o componente - salva esse sticke no db')
+                            }}/>
                     </Box>
                 </Box>
             </Box>
