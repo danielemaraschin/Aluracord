@@ -9,6 +9,14 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5v
 const SUPABASE_URL = 'https://icscbahdmnirzqegnofj.supabase.co'
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+
+
+function escutaMensagemEmTempoReal() { //from(nome da tb q quer buscar as info)
+    return supabaseClient.from('mensagens').on('INSERT', () => {
+
+    }).subscribe;
+}
+
 export default function ChatPage() {
 
     const roteamento = useRouter();
