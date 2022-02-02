@@ -139,7 +139,8 @@ export default function ChatPage() {
                         {/*callback*/}
                         <ButtonSendSticker
                             onStickerClick={(sticker) =>{
-                                console.log('usando o componente - salva esse sticke no db')
+                                console.log('usando o componente - salva esse sticke no db');
+                                handleNovaMensagem(':sticker: ' + sticker);
                             }}/>
                     </Box>
                 </Box>
