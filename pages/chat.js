@@ -11,12 +11,13 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
 
-function escutaMensagemEmTempoReal() { //from(nome da tb q quer buscar as info)
+function escutaMensagemEmTempoReal(adicionaMensagem) { //from(nome da tb q quer buscar as info)
     return supabaseClient
     .from('mensagens').
-    on('INSERT', ({}) => {
-
-    }).subscribe;
+    on('INSERT', ({RespostaNaLive}) => {
+        adicionaMensagem(RespostaNaLive.new);
+    }).
+    subscribe();
 }
 
 export default function ChatPage() {
