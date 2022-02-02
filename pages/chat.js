@@ -38,6 +38,9 @@ export default function ChatPage() {
                 console.log('Dados da Consulta: ', data);
                 setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
+        escutaMensagemEmTempoReal((novaMensagem) => {
+            handleNovaMensagem(novaMensagem)
+        })
     }, []);//deixar array vazio pq so quero que o useEffect seja chamado ao recarregar a page
 
     function handleNovaMensagem(novaMensagem) {
