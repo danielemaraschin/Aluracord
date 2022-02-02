@@ -25,7 +25,7 @@ export default function ChatPage() {
             .order('id', {ascending: false}) //lib supabase tem essa sintaxe para ordenarmos os itens do objeto
             .then(({data}) => {
                 console.log('Dados da Consulta: ', data);
-                //setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
+                setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
     }, []);//deixar array vazio pq so quero que o useEffect seja chamado ao recarregar a page
 
