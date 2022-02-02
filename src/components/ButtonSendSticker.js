@@ -75,8 +75,8 @@ export function ButtonSendSticker(props) {
               <Text
                 onClick={() => {
                   // console.log('[DENTRO DO COMPONENTE] Clicou no sticker:', sticker);
-                  if (Boolean(props.onStickerClick)) {
-                    props.onStickerClick(sticker);
+                  if (Boolean(props.onStickerClick)) { //=se o valor boolean desse aqui for true...
+                    props.onStickerClick(sticker);     //ele tem q executar a funcao
                   }
                 }}
                 tag="li" key={sticker}
