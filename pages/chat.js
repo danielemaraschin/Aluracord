@@ -12,7 +12,9 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
 function escutaMensagemEmTempoReal() { //from(nome da tb q quer buscar as info)
-    return supabaseClient.from('mensagens').on('INSERT', () => {
+    return supabaseClient
+    .from('mensagens').
+    on('INSERT', ({}) => {
 
     }).subscribe;
 }
