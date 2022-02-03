@@ -11,14 +11,16 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
 
-function escutaMensagemEmTempoReal(adicionaMensagem) { //from(nome da tb q quer buscar as info)
+ //from(nome da tb q quer buscar as info)
+ function escutaMensagensEmTempoReal(adicionaMensagem) {
     return supabaseClient
-        .from('mensagens').
-        on('INSERT', ({ RespostaNaLive }) => {
-            adicionaMensagem(RespostaNaLive.new);
-        }).
-        subscribe();
-}
+      .from('mensagens')
+      .on('INSERT', (respostaLive) => {
+        adicionaMensagem(respostaLive.new);
+      })
+      .subscribe();
+  }
+    
 
 export default function ChatPage() {
 
@@ -38,7 +40,8 @@ export default function ChatPage() {
                 // console.log('Dados da Consulta: ', data);
                 setListaDeMensagens(data) //data eh onde fica armazenada as msg quando abrimos o console 
             });
-        escutaMensagemEmTempoReal((novaMensagem) => { //qnd escutar uma nova mensagem, chama a funcao do setdemensagens
+            
+            escutaMensagensEmTempoReal((novaMensagem) => { //qnd escutar uma nova mensagem, chama a funcao do setdemensagens
 //se quero REusar um valor de referencia (objeto/array)devo passar uma funcao pro setState
             console.log('Nova mensagem? ', novaMensagem);
             setListaDeMensagens((valorAtualDaLista) => {
