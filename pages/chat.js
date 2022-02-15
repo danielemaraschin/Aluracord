@@ -83,7 +83,7 @@ export default function ChatPage() {
         <Box
             styleSheet={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                backgroundColor: appConfig.theme.colors.primary[500],
+                backgroundColor: appConfig.theme.colors.primary['000'],
                 backgroundImage: `url(https://lalarebelo.com/wp-content/uploads/2016/12/dicas-polinesia-francesa-tahiti_0281.jpg)`,
                 backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 color: appConfig.theme.colors.neutrals['000']
